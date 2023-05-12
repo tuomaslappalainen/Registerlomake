@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js"></script>
+    <title>Rekisteröitymislomake</title>
+  </head>
+  <body onload="document.registration.userid.focus();">
+    <h1>Rekisteröitymislomake</h1>
+    <form name="registration" onSubmit="return formValidation();">
+      <ul>
+       <li><label for="kayttajaid">Käyttäjä ID:</label>
+       <input type="text" name="kayttajaid" size="12" />
+        <label for="salasanaid">Salasana:</label>
+        <input type="password" name="salasanaid" size="12" />
+        <label for="kayttajanimi">Nimi:</label>
+       <input type="text" name="kayttajanimi" size="50" />
+        <label for="osoite">Osoite:</label>
+        <input type="text" name="osoite" size="50" />
+       <label for="maa">Maa:</label>
+       
+          <select name="maa">
+            <option selected="" value="Default">(Valitse maa)</option>
+            <option value="FI">Suomi</option>
+            <option value="RU">Venäjä</option>
+            <option value="GE">Saksa</option>
+            <option value="AU">Australia</option>
+            <option value="CA">Kanada</option>
+          </select>
+        
+       <label for="zip">Postinumero:</label>
+        <input type="text" name="zip" maxlength="5" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\.g/, '$1');" />
+        <label for="email">Sähköposti:</label>
+       <input type="text" name="email" size="50" minlength="6" />
+       <label id="Sukupuoli">Sukupuoli</label>
+       
+          <input type="radio" name="mies" value="Male" /><span>Mies</span>
+       
+          <input type="radio" name="nainen" value="Nainen" /><span>Nainen</span>
+        
+       <label>Kieli:</label>
+      
+          <input type="checkbox" name="fi" value="fi" checked /><span
+            >Suomi</span
+          >
+       
+          <input type="checkbox" name="muu" value="muu" /><span
+            >Muu kuin Suomi</span
+          >
+      
+      <label for="lisatiedot">Lisätietoja:</label>
+       <textarea name="lisatiedot" id="lisatiedot"></textarea>
+       <input type="submit" name="submit" value="Lähetä" /></li>
+      </ul>
+    </form>
+  </body>
+</html>
