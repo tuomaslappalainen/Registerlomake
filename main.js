@@ -33,6 +33,8 @@ function formValidation()
             }
         }
     }
+      alert('Lomnake lähetetty onnistuneesti');
 return false;
+  
 
 }
