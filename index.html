@@ -5,22 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="main.js"></script>
+
     <title>Rekisteröitymislomake</title>
   </head>
-  <body onload="document.registration.userid.focus();">
+
+  <body>
     <h1>Rekisteröitymislomake</h1>
-    <form name="registration" onSubmit="return formValidation();">
+    <form name="registration" onsubmit="return formValidation()">
+
       <ul>
-       <li><label for="kayttajaid">Käyttäjä ID:</label>
-       <input type="text" name="kayttajaid" size="12" />
-        <label for="salasanaid">Salasana:</label>
+
+       <li><label id="kayttajaid">Käyttäjä ID:</label>
+       <input type="text" name="kayttajaid"  size="12" />
+
+        <label id="salasanaid">Salasana:</label>
         <input type="password" name="salasanaid" size="12" />
-        <label for="kayttajanimi">Nimi:</label>
+
+        <label id="kayttajanimi">Nimi:</label>
        <input type="text" name="kayttajanimi" size="50" />
-        <label for="osoite">Osoite:</label>
+
+        <label id="postiosoite">Osoite:</label>
         <input type="text" name="osoite" size="50" />
-       <label for="maa">Maa:</label>
+
+       <label id="maa">Maa:</label>
        
           <select name="maa">
             <option selected="" value="Default">(Valitse maa)</option>
@@ -31,10 +41,12 @@
             <option value="CA">Kanada</option>
           </select>
         
-       <label for="zip">Postinumero:</label>
+       <label id="zip">Postinumero:</label>
         <input type="text" name="zip" maxlength="5" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\.g/, '$1');" />
-        <label for="email">Sähköposti:</label>
+
+        <label id="sposti">Sähköposti:</label>
        <input type="text" name="email" size="50" minlength="6" />
+
        <label id="Sukupuoli">Sukupuoli</label>
        
           <input type="radio" name="mies" value="Male" /><span>Mies</span>
@@ -51,9 +63,10 @@
             >Muu kuin Suomi</span
           >
       
-      <label for="lisatiedot">Lisätietoja:</label>
+      <label id="lisatiedot">Lisätietoja:</label>
        <textarea name="lisatiedot" id="lisatiedot"></textarea>
-       <input type="submit" name="submit" value="Lähetä" /></li>
+
+       <input type="submit" onclick="return isEmpty()" value="Lähetä"/></li>
       </ul>
     </form>
   </body>
