@@ -73,4 +73,7 @@ function formValidation(){
 
     }
 
+return false;
+      alert('Lomnake lähetetty onnistuneesti');  
+
 }
